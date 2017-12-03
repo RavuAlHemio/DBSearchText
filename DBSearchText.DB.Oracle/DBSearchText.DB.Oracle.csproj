@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\DBSearchText.Common\DBSearchText.Common.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Oracle.ManagedDataAccess" Version="12.2.1100" />
+  </ItemGroup>
+  <PropertyGroup>
+    <TargetFramework>net461</TargetFramework>
+  </PropertyGroup>
+</Project>

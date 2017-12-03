@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>netcoreapp2.0;net461</TargetFrameworks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DBSearchText.Common\DBSearchText.Common.csproj" />
+    <ProjectReference Include="..\DBSearchText.DB.Postgres\DBSearchText.DB.Postgres.csproj" />
+    <ProjectReference Include="..\DBSearchText.DB.Sqlite\DBSearchText.DB.Sqlite.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <DefineConstants Condition="'$(DefineConstants)' != ''">$(DefineConstants);</DefineConstants>
+    <DefineConstants>$(DefineConstants)DB_PLUGIN_POSTGRESQL;DB_PLUGIN_SQLITE</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net461'">
+    <ProjectReference Include="..\DBSearchText.DB.Oracle\DBSearchText.DB.Oracle.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net461'">
+    <DefineConstants Condition="'$(DefineConstants)' != ''">$(DefineConstants);</DefineConstants>
+    <DefineConstants>$(DefineConstants)DB_PLUGIN_ORACLE</DefineConstants>
+  </PropertyGroup>
+
+</Project>

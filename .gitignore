@@ -1,0 +1,6 @@
+# .NET build process
+bin/
+obj/
+
+*.sqlite
+!*.sqlite/
