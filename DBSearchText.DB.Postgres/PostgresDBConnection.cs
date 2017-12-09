@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using DBSearchText.Common;
 using Npgsql;
@@ -251,9 +252,8 @@ namespace DBSearchText.DB.Postgres
             _disposed = true;
         }
 
+        [Pure]
         protected virtual bool IsTextColumnType(string typeName)
-        {
-            return typeName == "char" || typeName == "varchar" || typeName == "text";
-        }
+            => typeName == "char" || typeName == "varchar" || typeName == "text";
     }
 }

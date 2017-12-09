@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using DBSearchText.Common;
@@ -134,6 +135,7 @@ namespace DBSearchText.DB.Sqlite
             _disposed = true;
         }
 
+        [Pure]
         protected virtual bool IsTextColumnType(string typeName)
         {
             // "Datatypes In SQLite Version 3", section 3.1

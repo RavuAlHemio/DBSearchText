@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using DBSearchText.Common;
 using Oracle.ManagedDataAccess.Client;
@@ -155,9 +156,8 @@ namespace DBSearchText.DB.Oracle
             _disposed = true;
         }
 
+        [Pure]
         protected virtual bool IsTextColumnType(string typeName)
-        {
-            return typeName == "CHAR" || typeName == "CLOB" || typeName == "VARCHAR" || typeName == "VARCHAR2";
-        }
+            => typeName == "CHAR" || typeName == "CLOB" || typeName == "VARCHAR" || typeName == "VARCHAR2";
     }
 }
