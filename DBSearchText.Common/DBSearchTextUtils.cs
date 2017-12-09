@@ -93,7 +93,7 @@ namespace DBSearchText.Common
                         var pKeyBuilder = ImmutableSortedDictionary.CreateBuilder<string, string>();
                         foreach (string pKeyColName in tableDef.PrimaryKeyColumnNames)
                         {
-                            string pKeyColVal = reader.GetString(reader.GetOrdinal(pKeyColName));
+                            string pKeyColVal = reader.GetValue(reader.GetOrdinal(pKeyColName)).ToString();
                             pKeyBuilder[pKeyColName] = pKeyColVal;
                         }
                         ImmutableSortedDictionary<string, string> pKey = pKeyBuilder.ToImmutable();
