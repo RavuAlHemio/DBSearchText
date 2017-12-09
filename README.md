@@ -9,7 +9,7 @@ this tool).
 ## Supported database engines
 
 * Microsoft SQL Server
-* MySQL
+* MySQL and MariaDB
 * Oracle (one service at a time)
 * PostgreSQL (one database at a time)
 * SQLite
