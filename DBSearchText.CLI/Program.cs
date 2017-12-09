@@ -80,6 +80,9 @@ namespace DBSearchText.CLI
             #if DB_PLUGIN_SQLITE
             PluginCollection.Instance.RegisterPlugin("sqlite", DBSearchText.DB.Sqlite.SqliteDBConnectionFactory.Instance);
             #endif
+            #if DB_PLUGIN_SQLSERVER
+            PluginCollection.Instance.RegisterPlugin("sqlserver", DBSearchText.DB.SQLServer.SQLServerDBConnectionFactory.Instance);
+            #endif
         }
     }
 }
