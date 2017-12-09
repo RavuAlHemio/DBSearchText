@@ -72,7 +72,9 @@ namespace DBSearchText.Common
         public static string EscapeSQLLikeString(this string sqlLikeString, char escapeChar = '\\')
             => sqlLikeString.Replace($"{escapeChar}", $"{escapeChar}{escapeChar}")
                 .Replace("%", $"{escapeChar}%")
-                .Replace("_", $"{escapeChar}_");
+                .Replace("_", $"{escapeChar}_")
+                .Replace("[", $"{escapeChar}[")
+            ;
 
         [Pure]
         public static string JoinWith(this IEnumerable<string> strings, string glue)
