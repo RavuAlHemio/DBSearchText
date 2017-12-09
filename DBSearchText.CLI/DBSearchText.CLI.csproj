@@ -7,13 +7,14 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DBSearchText.Common\DBSearchText.Common.csproj" />
+    <ProjectReference Include="..\DBSearchText.DB.MySQL\DBSearchText.DB.MySQL.csproj" />
     <ProjectReference Include="..\DBSearchText.DB.Postgres\DBSearchText.DB.Postgres.csproj" />
     <ProjectReference Include="..\DBSearchText.DB.Sqlite\DBSearchText.DB.Sqlite.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
     <DefineConstants Condition="'$(DefineConstants)' != ''">$(DefineConstants);</DefineConstants>
-    <DefineConstants>$(DefineConstants)DB_PLUGIN_POSTGRESQL;DB_PLUGIN_SQLITE</DefineConstants>
+    <DefineConstants>$(DefineConstants)DB_PLUGIN_MYSQL;DB_PLUGIN_POSTGRESQL;DB_PLUGIN_SQLITE</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net461'">

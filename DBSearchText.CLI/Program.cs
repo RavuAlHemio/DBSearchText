@@ -68,6 +68,9 @@ namespace DBSearchText.CLI
         static void RegisterPlugins()
         {
             // FIXME: implement scan-and-load
+            #if DB_PLUGIN_MYSQL
+            PluginCollection.Instance.RegisterPlugin("mysql", DBSearchText.DB.MySQL.MySQLDBConnectionFactory.Instance);
+            #endif
             #if DB_PLUGIN_ORACLE
             PluginCollection.Instance.RegisterPlugin("oracle", DBSearchText.DB.Oracle.OracleDBConnectionFactory.Instance);
             #endif
