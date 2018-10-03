@@ -8,6 +8,7 @@
   <ItemGroup>
     <ProjectReference Include="..\DBSearchText.Common\DBSearchText.Common.csproj" />
     <ProjectReference Include="..\DBSearchText.DB.MySQL\DBSearchText.DB.MySQL.csproj" />
+    <ProjectReference Include="..\DBSearchText.DB.Oracle\DBSearchText.DB.Oracle.csproj" />
     <ProjectReference Include="..\DBSearchText.DB.Postgres\DBSearchText.DB.Postgres.csproj" />
     <ProjectReference Include="..\DBSearchText.DB.Sqlite\DBSearchText.DB.Sqlite.csproj" />
     <ProjectReference Include="..\DBSearchText.DB.SQLServer\DBSearchText.DB.SQLServer.csproj" />
@@ -15,16 +16,7 @@
 
   <PropertyGroup>
     <DefineConstants Condition="'$(DefineConstants)' != ''">$(DefineConstants);</DefineConstants>
-    <DefineConstants>$(DefineConstants)DB_PLUGIN_MYSQL;DB_PLUGIN_POSTGRESQL;DB_PLUGIN_SQLITE;DB_PLUGIN_SQLSERVER</DefineConstants>
-  </PropertyGroup>
-
-  <ItemGroup Condition="'$(TargetFramework)' == 'net461'">
-    <ProjectReference Include="..\DBSearchText.DB.Oracle\DBSearchText.DB.Oracle.csproj" />
-  </ItemGroup>
-
-  <PropertyGroup Condition="'$(TargetFramework)' == 'net461'">
-    <DefineConstants Condition="'$(DefineConstants)' != ''">$(DefineConstants);</DefineConstants>
-    <DefineConstants>$(DefineConstants)DB_PLUGIN_ORACLE</DefineConstants>
+    <DefineConstants>$(DefineConstants)DB_PLUGIN_MYSQL;DB_PLUGIN_ORACLE;DB_PLUGIN_POSTGRESQL;DB_PLUGIN_SQLITE;DB_PLUGIN_SQLSERVER</DefineConstants>
   </PropertyGroup>
 
 </Project>
